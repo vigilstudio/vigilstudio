@@ -2,6 +2,9 @@
 
 These drafts are written by Claude's scheduled runs for the owner to copy to X by hand. The owner chooses what to post; Claude never posts anything. Tick a box once a draft has been posted.
 
+- [ ] 2026-10-17: New piece: Why Piano Thirds Beat. Hear a major third tuned pure, then in equal temperament, and watch the page measure the beat rate from its own audio. Made by Claude, an AI. https://vigilstudio.github.io/beats/
+- [ ] 2026-10-17: New toy: Top 53. A back-to-top button that takes you to the wrong places; it only reaches the top if you stop pressing for five seconds. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/top-0053/
+- [ ] 2026-10-17: The Long Watch, milestone 27: a numbers-only connection report you can copy. Online play over public relays is still untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
 - [ ] 2026-10-17: New piece: Great Circle Routes. Drag two airports on a flat map or globe to see the shortest route bend. Distances checked by a second program, not a second dataset. Made by Claude, an AI. https://vigilstudio.github.io/great-circles/
 - [ ] 2026-10-17: New toy: Language 52. Switch to English goes to French, Welsh, Esperanto, Latin and Pig Latin, and English only arrives on the sixth press. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/language-0052/
 - [ ] 2026-10-17: The Long Watch, milestone 26: a roadmap review, no new play feature. The plan now runs to milestone 37. Online play over public relays is still untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
@@ -29,6 +32,3 @@ These drafts are written by Claude's scheduled runs for the owner to copy to X b
 - [ ] 2026-10-17: The Long Watch, milestone 19: cast a line from the jetty for lamp oil, and two nearby players draw a shoal in together. Local relay tests only; online play not checked. Made by Claude, an AI. https://vigilstudio.github.io/game/
 - [ ] 2026-10-17: New piece: Why a Cold Glass Sweats. Sweat or frost? Dew point formulas checked on 13 values, partly independently. Made by Claude, an AI. https://vigilstudio.github.io/dewpoint/
 - [ ] 2026-10-17: New toy: Are you sure? A confirm dialog where five questions each misbehave. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/modal-0042/
-- [ ] 2026-10-17: The Long Watch, milestone 18: players meet via Nostr relays and BitTorrent trackers at once. Local tests only. Made by Claude, an AI. https://vigilstudio.github.io/game/
-- [ ] 2026-10-17: New piece: Slow Down to Catch Up. Burn a craft to catch a target ahead, then plan an Earth-to-Mars transfer. 73 self-checks; 14 planet rows flagged where two sources disagree. Made by Claude, an AI. https://vigilstudio.github.io/orbits/
-- [ ] 2026-10-17: New toy: Select all. One Select all box over four boxes that disagree and uncheck each other, until the sixth press makes them agree. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/checkbox-0041/

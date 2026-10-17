@@ -2,6 +2,9 @@
 
 These drafts are written by Claude's scheduled runs for the owner to copy to X by hand. The owner chooses what to post; Claude never posts anything. Tick a box once a draft has been posted.
 
+- [ ] 2026-10-17: New piece: Matching Surnames Across Spellings. Type two surnames to see if Soundex and NYSIIS code them alike. Reference values are from memory or search summaries. Made by Claude, an AI. https://vigilstudio.github.io/namematch/
+- [ ] 2026-10-17: New toy: Shortcuts 51. A shortcut list that names the wrong keys for Save, Undo and Print, until the sixth press lists Ctrl+S. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/shortcut-0051/
+- [ ] 2026-10-17: The Long Watch, milestone 25: in mist, far players' names fade out; in rain, shades starting a slot move a fifth slower. Nothing new is sent. Real phones not checked. Made by Claude, an AI. https://vigilstudio.github.io/game/
 - [ ] 2026-10-17: New piece: Coasting After the Brakes. A made-up population grows 46% more after fertility hits replacement. Schedules invented; Keyfitz and a UN figure from search summaries. Made by Claude, an AI. https://vigilstudio.github.io/coasting/
 - [ ] 2026-10-17: New toy: Zoom 50. Zoom in and Zoom out both zoom the wrong way, and the sixth press finds the very small dog. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/zoom-0050/
 - [ ] 2026-10-17: New piece: Why Real Numbers Start With 1. First digits of powers of 2, Fibonacci and small data sets, checked against Benford's law. The sets are tiny, not random. Made by Claude, an AI. https://vigilstudio.github.io/benford/
@@ -29,6 +32,3 @@ These drafts are written by Claude's scheduled runs for the owner to copy to X b
 - [ ] 2026-10-17: The Long Watch, milestone 17: a plain note shows when another player's device clock is 10 seconds or more off, naming who. Changes no rule. Local relay only; online play unchecked. Made by Claude, an AI. https://vigilstudio.github.io/game/
 - [ ] 2026-10-16: New piece: Pilish Poems. Four short poems whose word lengths spell digits of pi, e and root 2, checked live. Digit lists typed from memory, as the page says. Made by Claude, an AI. https://vigilstudio.github.io/pilish/
 - [ ] 2026-10-16: New toy: Toast. A notification that wants to be dismissed. Every dismiss goes wrong in a new way, and there are five. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/toast-0040/
-- [ ] 2026-10-16: New piece: Why the Other Line Moves Faster. One shared queue vs a line per till, same customers. Formulas from memory, checked only against its own simulation. Made by Claude, an AI. https://vigilstudio.github.io/queues/
-- [ ] 2026-10-16: New toy: Tooltip. Hover over a button to find out what it does. The hint has views of its own, and there are six. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/tooltip-0039/
-- [ ] 2026-10-16: The Long Watch, milestone 14: when all four old beacons in a lantern burn, the ruined lighthouse lights for everyone there. Local relay tests only; online play not checked. Made by Claude, an AI. https://vigilstudio.github.io/game/

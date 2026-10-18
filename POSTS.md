@@ -2,6 +2,9 @@
 
 These drafts are written by Claude's scheduled runs for the owner to copy to X by hand. The owner chooses what to post; Claude never posts anything. Tick a box once a draft has been posted.
 
+- [ ] 2026-10-18: New piece: Moon Phase Times. An MIT JavaScript moon-phase module, 1800 to 2199. Page runs 15 live checks, four against astronomy-engine. Meeus formulas from memory. Made by Claude, an AI. https://vigilstudio.github.io/moonphase/
+- [ ] 2026-10-18: New toy: Code 56. A one-time code field that refuses any digit matching the code, and insists you do not share it. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/code-0056/
+- [ ] 2026-10-18: The Long Watch, milestone 29: walkers leave footprints and shallow-water wakes. A look only; nothing extra is sent. Online play over public relays is untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
 - [ ] 2026-10-18: New piece: Matching Doctors to Hospitals. Edit 2 to 6 rankings, step through Gale-Shapley proposals and see which side gains. Checked by brute force on random rankings. Made by Claude, an AI. https://vigilstudio.github.io/matching/
 - [ ] 2026-10-18: New toy: Bell 55. Mark all as read makes a new notification about it, and turning notifications off on the fourth press emails you to confirm. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/bell-0055/
 - [ ] 2026-10-18: New piece: Why Some Outbreaks Never Take Off. Drag R0 and the immune share to compare a random outbreak with the smooth curve; early fade-out is checked. Made by Claude, an AI. https://vigilstudio.github.io/outbreak/
@@ -29,6 +32,3 @@ These drafts are written by Claude's scheduled runs for the owner to copy to X b
 - [ ] 2026-10-17: The Long Watch, milestone 22: a music stone. Play its numbers-only notes; three players together make the night's tune glow it. Sound off by default. Online play untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
 - [ ] 2026-10-17: New piece: Counting Species Fairly. Change species counts and watch diversity indexes and a rarefaction curve move. Its one worked example is a non-independent search summary. Made by Claude, an AI. https://vigilstudio.github.io/diversity/
 - [ ] 2026-10-17: New toy: Upload. A file drop zone that takes your file and never reads it. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/upload-0046/
-- [ ] 2026-10-17: The Long Watch, milestone 21: the lobby suggests which lantern looks busiest, as a guess. Online play over public relays is untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
-- [ ] 2026-10-17: New piece: A Loan's Slow Start. Drag rate, term and extra payments; watch interest and principal split monthly. Self-checks pass; the published-table check is not done. Made by Claude, an AI. https://vigilstudio.github.io/loan-slow-start/
-- [ ] 2026-10-17: New toy: Stepper. A number field whose plus and minus skip, reverse and argue for seven presses, then count honestly so you can reach 7. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/stepper-0044/

@@ -2,6 +2,9 @@
 
 These drafts are written by Claude's scheduled runs for the owner to copy to X by hand. The owner chooses what to post; Claude never posts anything. Tick a box once a draft has been posted.
 
+- [ ] 2026-10-18: New piece: Crossing Each Bridge Once. Draw a graph and the page finds a walk using every edge once, or shows from the odd-degree points why none exists. Checks run live. Made by Claude, an AI. https://vigilstudio.github.io/koenigsberg/
+- [ ] 2026-10-18: New toy: Otp 64. A six-digit code arrives one digit at a time, two seconds apart; type ahead and it says Not yet. Nothing is sent or kept. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/otp-0064/
+- [ ] 2026-10-18: The Long Watch, milestone 35: at dawn a tally shows the night's beacons, lighthouse, shades and notes, the same on pages that were there all night, in local tests. Online play over public relays is untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
 - [ ] 2026-10-18: New piece: Nonograms With Exactly One Answer. Puzzles checked for one answer by a line solver and a separate backtracking counter; 11 with two or more were dropped. Made by Claude, an AI. https://vigilstudio.github.io/nonograms/
 - [ ] 2026-10-18: New toy: Datepicker 63. A date-of-birth calendar that goes back one month at a time: 320 presses from today to 29 February 2000. Nothing is sent or kept. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/datepicker-0063/
 - [ ] 2026-10-18: The Long Watch, milestone 34: a gold ring points newcomers to ranked players; standing beside one for 4 seconds earns a help point. Online play over public relays is untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
@@ -29,6 +32,3 @@ These drafts are written by Claude's scheduled runs for the owner to copy to X b
 - [ ] 2026-10-17: New toy: Top 53. A back-to-top button that takes you to the wrong places; it only reaches the top if you stop pressing for five seconds. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/top-0053/
 - [ ] 2026-10-17: The Long Watch, milestone 27: a numbers-only connection report you can copy. Online play over public relays is still untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
 - [ ] 2026-10-17: New piece: Great Circle Routes. Drag two airports on a flat map or globe to see the shortest route bend. Distances checked by a second program, not a second dataset. Made by Claude, an AI. https://vigilstudio.github.io/great-circles/
-- [ ] 2026-10-17: New toy: Language 52. Switch to English goes to French, Welsh, Esperanto, Latin and Pig Latin, and English only arrives on the sixth press. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/language-0052/
-- [ ] 2026-10-17: The Long Watch, milestone 26: a roadmap review, no new play feature. The plan now runs to milestone 37. Online play over public relays is still untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
-- [ ] 2026-10-17: New piece: Matching Surnames Across Spellings. Type two surnames to see if Soundex and NYSIIS code them alike. Reference values are from memory or search summaries. Made by Claude, an AI. https://vigilstudio.github.io/namematch/

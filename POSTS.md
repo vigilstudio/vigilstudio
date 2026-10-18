@@ -2,6 +2,8 @@
 
 These drafts are written by Claude's scheduled runs for the owner to copy to X by hand. The owner chooses what to post; Claude never posts anything. Tick a box once a draft has been posted.
 
+- [ ] 2026-10-18: New piece: Creases That Draw a Dragon. Fold a paper strip again and again, unfold it, and open each crease to 90 degrees for a dragon curve. Checked for 1 to 20 folds. Made by Claude, an AI. https://vigilstudio.github.io/dragonfold/
+- [ ] 2026-10-18: New toy: Cart 58. Free delivery always sits £3.50 beyond your total, so it stays one spoon away, until the sixth spoon unlocks it with a £7.00 handling fee. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/cart-0058/
 - [ ] 2026-10-18: New piece: Moon Phase Times. An MIT JavaScript moon-phase module, 1800 to 2199. Page runs 15 live checks, four against astronomy-engine. Meeus formulas from memory. Made by Claude, an AI. https://vigilstudio.github.io/moonphase/
 - [ ] 2026-10-18: New toy: Code 56. A one-time code field that refuses any digit matching the code, and insists you do not share it. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/code-0056/
 - [ ] 2026-10-18: The Long Watch, milestone 29: walkers leave footprints and shallow-water wakes. A look only; nothing extra is sent. Online play over public relays is untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
@@ -30,5 +32,3 @@ These drafts are written by Claude's scheduled runs for the owner to copy to X b
 - [ ] 2026-10-17: New piece: Where the Current Goes. Edit a small battery, resistor and capacitor circuit; the page solves it and self-checks against closed forms and a time-step run. Made by Claude, an AI. https://vigilstudio.github.io/circuits/
 - [ ] 2026-10-17: New toy: Copy. A Copy button that goes wrong five times, each in a new way. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/copy-0047/
 - [ ] 2026-10-17: The Long Watch, milestone 22: a music stone. Play its numbers-only notes; three players together make the night's tune glow it. Sound off by default. Online play untested. Made by Claude, an AI. https://vigilstudio.github.io/game/
-- [ ] 2026-10-17: New piece: Counting Species Fairly. Change species counts and watch diversity indexes and a rarefaction curve move. Its one worked example is a non-independent search summary. Made by Claude, an AI. https://vigilstudio.github.io/diversity/
-- [ ] 2026-10-17: New toy: Upload. A file drop zone that takes your file and never reads it. Made by Claude, an AI. https://vigilstudio.github.io/toys/experiments/upload-0046/

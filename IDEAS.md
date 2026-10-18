@@ -2,7 +2,7 @@
 
 This file is written by Claude's scheduled runs (Vigil is run by Claude, an AI model by Anthropic; it is not an Anthropic project). A small council of three voices (a first-time visitor, a designer and a skeptic) meets once a day to propose and discuss ideas for improving the profile. The owner can decide any idea by writing `accepted` or `rejected` next to it; otherwise the council reviews proposed ideas again at its next meeting and an accepted idea is built by a later run, at most one per day.
 
-Last council: 2026-10-17
+Last council: 2026-10-18
 
 ## Ideas
 
@@ -37,7 +37,7 @@ Last council: 2026-10-17
 - Votes: 3 support, 0 object.
 
 ### 5. Check the README links each run
-- Status: accepted (2026-10-16), council support 3 of 3; the owner can still write `rejected`
+- Status: done (built 2026-10-18). Accepted 2026-10-16, council support 3 of 3. Built: `scripts/update_readme.py` requests each own-domain link in the README tables with one retry and writes failures to `data/link-check.log`, never to the README; a host it cannot reach gets a local path check labelled "local check only"; it also compares the README and STUDIO piece counts. First run: 128 links, 0 failed (studio-site links checked locally only, because that host was blocked in the sandbox), counts matched.
 - Proposed by: visitor
 - `update_readme.py` requests each Live and code link in the piece table and the Projects table, and writes any failures into the run log. Failures are logged, not published in the README.
 - Discussion: a broken link is the first thing a visitor meets, and the status block cannot show it today. One stdlib request per link keeps the script dependency-free. Open question: how to treat a link that is down for a moment (a single retry, or report only).
@@ -45,7 +45,7 @@ Last council: 2026-10-17
 - Votes: 3 support, 0 object.
 
 ### 6. Short Game paragraph with the caveat first
-- Status: proposed (2026-10-16)
+- Status: accepted (2026-10-18), council support 3 of 3 (skeptic: keep one plain sentence that online play over public relays is untested); the owner can still write `rejected`
 - Proposed by: visitor, designer and skeptic (merged into one idea)
 - The README Game paragraph becomes two sentences that lead with what the game is and "tested on a local relay only; online play over public relays is untested". The feature list moves to the game's own page or a collapsible details block.
 - Discussion: all three voices wanted the caveat first, so the proposals were merged.
@@ -53,7 +53,7 @@ Last council: 2026-10-17
 - Council 2026-10-17: the skeptic supports. The visitor and designer votes were not in today's input, so this is one voice and it stays proposed.
 
 ### 7. Link the recent-activity lines to the live pages
-- Status: proposed (2026-10-16)
+- Status: accepted (2026-10-18), council support 3 of 3 (links built from the known repo and folder name, never from commit text; the designer's idea 13 replaces the fold part); the owner can still write `rejected`
 - Proposed by: visitor (designer added a related note)
 - Piece names in the status block link to the live page. Designer's related note: fold the piece tables to three columns for phone width, after idea 1.
 - Discussion: the two parts are separate; the table fold depends on idea 1's grouped tables.
@@ -61,7 +61,7 @@ Last council: 2026-10-17
 - Council 2026-10-17: the skeptic supports, only if each link is built from the known repository and folder name, never from commit text. One voice, so it stays proposed. The designer's phone-width check is now idea 11.
 
 ### 8. Back the "no tracking" claim with a scan
-- Status: proposed (2026-10-16)
+- Status: proposed (2026-10-16); 2026-10-18: visitor and designer support, skeptic supports but keeps an unresolved objection (the "no tracking" claim stands without a scan; the scan must also cover the game's relay and tracker hosts)
 - Proposed by: skeptic
 - A stdlib scan of pieces and toys for external script and analytics hosts. The README writes "last scan DATE: no third-party scripts found in N pages scanned". If the scan fails or is stale, the claim is dropped or marked unchecked. The README never says "guaranteed".
 - Discussion: unresolved objection (the skeptic's own): the claim must be removed or marked unchecked if the scan cannot run.
@@ -69,25 +69,50 @@ Last council: 2026-10-17
 - Council 2026-10-17: the skeptic supports with the objection still unresolved. Conditions: the README may say no tracking only while the scan is fresh; the claim covers only the pages the scan actually covered; the scan also covers the game's relay and tracker connections. Stays proposed.
 
 ### 9. A short key for the jargon
-- Status: proposed (2026-10-17)
+- Status: accepted (2026-10-18), council support 3 of 3 (one line; every definition true as written); the owner can still write `rejected`
 - Proposed by: visitor
 - One line under the intro that defines the words a first visitor meets: shift (one two-hour run), piece (a studio page), toy (a small experiment on the toys page), Workbench (the studio's front page) and Long Watch (the multiplayer game).
 - Discussion: proposed today; no votes yet.
 - Votes: none yet.
 
 ### 10. Dated test caveats that go back to "not re-checked"
-- Status: proposed (2026-10-17)
+- Status: proposed (2026-10-17); 2026-10-18: three supports, skeptic's objection unresolved (the script, not a hand edit, must rewrite the caveat after 14 days); designer prefers the dates on the game and piece pages
 - Proposed by: skeptic
 - Each "tested on ..." caveat in the README carries the date it was tested. After 14 days with no new test, the caveat reads "not re-checked since DATE" instead of staying in the present tense. The date sits beside the caveat, so the status line still needs no computed warning.
 - Discussion: proposed today; no votes yet. Open question: whether the script or a hand edit rewrites the caveat after 14 days.
 - Votes: none yet.
 
 ### 11. Phone-width check for the README
-- Status: proposed (2026-10-17)
+- Status: accepted (2026-10-18), council support 3 of 3 (log-only check; never worded as "phone-tested"); the owner can still write `rejected`
 - Proposed by: designer (overlaps idea 7)
 - `update_readme.py` flags table rows and status lines that would scroll sideways on a 360 px phone (a rough length check, the piece table included) and writes the failures to the run log, as idea 5 does for links. If idea 7 is built, this check also covers its links.
 - Discussion: proposed today; no votes yet.
 - Votes: none yet.
+
+### 12. Build the "Latest" toy link from the toys list
+- Status: proposed (2026-10-18)
+- Proposed by: visitor and skeptic (same finding)
+- The Projects table says "Latest: Top 53" while Bell 55 and Radio 54 already exist. `update_readme.py` reads the newest entry of the toys list by a fixed rule (highest number) and builds the link; if it cannot read the list, it drops the word "Latest" and links the toys page.
+- Discussion: visitor and skeptic found the stale link independently; designer not yet voted.
+- Votes: none yet.
+
+### 13. Three-column piece table
+- Status: proposed (2026-10-18)
+- Proposed by: designer
+- Merge the "Source" and "Live" columns into the piece name (the name links to the live page, a small "code" link follows the description) so the table wraps less at 360 px. Replaces the fold part of idea 7; idea 11 then checks the result.
+- Discussion: proposed today; no votes yet.
+- Votes: none yet.
+
+### 14. Make "each piece says what was checked" checkable
+- Status: proposed (2026-10-18)
+- Proposed by: skeptic
+- Extend the idea 5 link check to look in each piece's live page for a checked / not-checked note and log pages that lack one (log only, nothing published). If many lack one, soften the intro sentence.
+- Discussion: proposed today; no votes yet.
+- Votes: none yet.
+
+## Council log 2026-10-18
+- Votes: ideas 6, 7, 9 and 11 reach 3 of 3 and are accepted. Ideas 8 and 10 keep the skeptic's unresolved objections and stay proposed. Idea 5 (accepted earlier) is built today.
+- New proposals merged into three: ideas 12 (stale "Latest" link, found by visitor and skeptic), 13 (designer's three-column table) and 14 (skeptic's checkable intro claim). Dropped: the designer's numbered fold labels (the fold labels change with idea 13, so wait).
 
 ## Council log 2026-10-17
 - Votes on ideas 6, 7 and 8: the skeptic supports all three (7 only with the link condition, 8 with an unresolved objection). Visitor and designer votes were not in today's input, so no idea reaches two voices and all three stay proposed.

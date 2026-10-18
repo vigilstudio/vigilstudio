@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """Regenerate the routine-status block in README.md (stdlib only).
 
-Usage: python3 scripts/update_readme.py [--repos DIR] [--no-bump]
+Usage: python3 scripts/update_readme.py [--repos DIR] [--no-bump] [--no-links]
 DIR holds the three cloned repos side by side (default: the parent folder).
 Each run bumps the counter in data/state.json, stamps the time, and lists
 the latest commits across the repos. Text between the STATUS markers is replaced.
 It also rebuilds the "Studio pieces" section (between the PIECES markers) from
 the pieces table in the studio README (DIR/vigilstudio.github.io/README.md), so the
 two cannot drift: newest first, in collapsible groups, every piece listed.
+Finally it checks the README's own-domain links (see check_links) and appends the result to
+data/link-check.log. Failures go to that log only and are never written into the README.
 """
-import argparse, json, re, subprocess, sys
+import argparse, json, re, subprocess, sys, urllib.request, urllib.error
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -27,6 +29,8 @@ PICK = "illusions"  # editorial "Try this first" pick (folder name); change by h
 REPOS = ["vigilstudio", "vigilstudio.github.io", "toys"]
 INTERVAL = timedelta(hours=2)
 FMT = "%Y-%m-%d %H:%M UTC"
+LOG = ROOT / "data" / "link-check.log"
+OWN = (f"https://{STUDIO}/", "https://github.com/vigilstudio/")
 
 
 def recent_commits(base, limit=5):
@@ -131,9 +135,109 @@ def build(now, runs, fixed, commits):
     return "\n".join(lines)
 
 
+def table_links(text):
+    """Own-domain URLs found in the README's table rows (Projects and pieces tables), in order, unique."""
+    seen = []
+    for line in text.splitlines():
+        if line.lstrip().startswith("|"):
+            for u in re.findall(r"\]\((https?://[^)\s]+)\)", line):
+                if u.startswith(OWN) and u not in seen:
+                    seen.append(u)
+    return seen
+
+
+def fetch(url):
+    """None if the link answers 2xx/3xx, else a short reason. Network errors are returned as 'net: ...'."""
+    req = urllib.request.Request(url, headers={"User-Agent": "vigilstudio-link-check"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return None if r.status < 400 else f"HTTP {r.status}"
+    except urllib.error.HTTPError as e:
+        return f"HTTP {e.code}"
+    except Exception as e:
+        return f"net: {type(e).__name__} {e}"[:120]
+
+
+def local_ok(url, base):
+    """Does the link's path exist in the local checkouts? Returns None if so, else a reason."""
+    if url.startswith(SITE):
+        rel = url[len(SITE):].split("#")[0].split("?")[0]
+        in_toys = rel == "toys" or rel.startswith("toys/")
+        root = base / ("toys" if in_toys else STUDIO)
+        if in_toys:
+            rel = rel[len("toys"):].lstrip("/")
+        path = root / rel
+        ok = (path / "index.html").is_file() if (path.is_dir() or not rel) else path.is_file()
+    else:
+        parts = url[len(OWN[1]):].strip("/").split("/")
+        root = base / parts[0]
+        rel = "/".join(parts[3:]) if len(parts) > 3 and parts[1:3] != [] and parts[1] in ("tree", "blob") else ""
+        ok = root.is_dir() and (root / rel).exists() if len(parts) == 1 or rel or len(parts) == 3 else root.is_dir()
+    return None if ok else "path not found locally"
+
+
+def readme_piece_count(text):
+    return sum(1 for l in text.splitlines() if re.match(r"\|\s*\*\*.+?\*\*\s*\|.*\[code\]\(" + re.escape(CODE), l))
+
+
+def studio_table_count(base):
+    path = base / STUDIO / "STUDIO.md"
+    if not path.is_file():
+        return None
+    n, on = 0, False
+    for l in path.read_text().splitlines():
+        if l.startswith("| Piece |"):
+            on = True
+        elif on and l.startswith("|---"):
+            continue
+        elif on and l.startswith("|"):
+            n += 1
+        elif on:
+            break
+    return n
+
+
+def check_links(text, base, now):
+    """Request every own-domain table link (one retry); log failures to data/link-check.log, never to the README.
+
+    If the network is unreachable (first request fails at connection level, e.g. a blocked sandbox),
+    fall back, per unreachable host, to checking that each path exists in the local checkouts and label the entry "local check only"."""
+    links = table_links(text)
+    hosts = {}  # host -> True when unreachable at connection level; the first request to a host doubles as the probe
+    bad = []
+    for u in links:
+        h = u.split("/")[2]
+        if h not in hosts:
+            r = fetch(u)
+            hosts[h] = (r or "").startswith("net:")
+        else:
+            r = None if hosts[h] else fetch(u)
+        if hosts[h]:
+            r = local_ok(u, base)
+        elif r:
+            r = fetch(u)  # one retry
+        if r:
+            bad.append((u, r))
+    local = any(hosts.values())
+    rc, sc = readme_piece_count(text), studio_table_count(base)
+    out = [f"{now.strftime(FMT)} | {'local check only for ' + ', '.join(h for h in hosts if hosts[h]) + ' (network unreachable)' if local else 'live requests'} | "
+           f"{len(links)} links, {len(bad)} failed"]
+    out += [f"  FAIL {u} ({r})" for u, r in bad]
+    if sc is None:
+        out.append("  piece counts: STUDIO.md not found")
+    elif rc != sc:
+        out.append(f"  MISMATCH piece counts: README {rc}, STUDIO.md {sc}")
+    else:
+        out.append(f"  piece counts match: {rc}")
+    with LOG.open("a") as f:
+        f.write("\n".join(out) + "\n")
+    return out[0]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--repos", default=str(ROOT.parent))
+    ap.add_argument("--no-links", action="store_true", help="skip the link check")
     ap.add_argument("--no-bump", action="store_true", help="do not increment the counter")
     a = ap.parse_args()
     text = README.read_text()
@@ -156,7 +260,10 @@ def main():
         print("PIECES markers not found in README.md; pieces section left as is", file=sys.stderr)
     i, j = text.find(START), text.find(END)
     block = build(now, state["runs"], state.get("issues_fixed", 0), recent_commits(Path(a.repos)))
-    README.write_text(text[:i] + block + text[j + len(END):])
+    text = text[:i] + block + text[j + len(END):]
+    README.write_text(text)
+    if not a.no_links:
+        print("link check:", check_links(text, Path(a.repos), now), "(details in data/link-check.log)")
     print(f"runs={state['runs']} next={(now + INTERVAL).strftime(FMT)}")
 
 
